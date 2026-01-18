@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure Chat – Cyber Dashboard</title>
+    <style>
+        body { font-family: Arial; background: #0f172a; color: #e5e7eb; }
+        .box { background: #020617; padding: 20px; border-radius: 8px; }
+        h1 { color: #38bdf8; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 6px; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🔐 Secure Chat Dashboard</h1>
+
+        <p><b>Server running:</b> {{ status.running }}</p>
+        <p><b>Connected clients:</b> {{ status.clients }}</p>
+
+        <h3>Security Events</h3>
+        <ul>
+            {% for event in status.events[-10:] %}
+                <li>{{ event }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
